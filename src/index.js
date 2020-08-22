@@ -24,8 +24,8 @@ store.dispatch(
     Bugs.updateBugAction({id : 2})
 )
 
-store.dispatch(
-    Bugs.removeBugAction({id : 4})
-)
+// store.dispatch(
+//     Bugs.removeBugAction({id : 4})
+// )
 
-console.log("state", store.getState() );
+// console.log("state", store.getState() );
