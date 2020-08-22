@@ -1,4 +1,4 @@
-import {createBug,updateBug,deleteBug} from "./store/bugs";
+import * as Bugs from "./store/bugs";
 
 import  {bugStoreCreator} from  "./store/bugStoreCreator"
 
@@ -8,26 +8,24 @@ console.log("Hello World!");
 
 const unsubscribe = store.subscribe(
     () =>
-    console.log("Redux Operation Executed", store.getState())
+    console.log("Redux Operation Executed After Toolkit Actions", store.getState())
 )
 store.dispatch(
-    createBug("Bug1")
-)
-
-store.dispatch(
-    createBug("Bug2")
+    Bugs.createBugAction({description: "Bug1"})
 )
 
 store.dispatch(
-    createBug("Bug3")
+    Bugs.createBugAction({description: "Bug2"}))
+
+store.dispatch(
+    Bugs.createBugAction({description: "Bug13"}))
+
+store.dispatch(
+    Bugs.updateBugAction({id : 2})
 )
 
 store.dispatch(
-    updateBug(3)
-)
-
-store.dispatch(
-    deleteBug(4)
+    Bugs.removeBugAction({id : 4})
 )
 
 console.log("state", store.getState() );
