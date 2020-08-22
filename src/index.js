@@ -1,9 +1,14 @@
 import * as Bugs from "./store/bugs";
+import * as Project from "./store/projects"
 
-import  {bugStoreCreator} from  "./store/bugStoreCreator"
+import  {StoreCreator} from "./store/storeCreator"
 
 
-const store = bugStoreCreator();
+const store = StoreCreator();
+
+store.dispatch(
+    Project.addProject({name : "Project1"})
+)
 console.log("Hello World!");
 
 const unsubscribe = store.subscribe(

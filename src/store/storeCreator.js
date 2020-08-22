@@ -1,9 +1,9 @@
 import {createStore} from "redux";
 import {configureStore} from "@reduxjs/toolkit"
-import createReducer from "./bugs";
+import createReducer from "./projects";
 
 
-export function bugStoreCreator() {
+export function StoreCreator() {
     return configureStore({
         reducer : createReducer
     });
