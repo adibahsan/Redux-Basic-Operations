@@ -1,5 +1,9 @@
-import {store,createBug,updateBug,deleteBug} from "./store/bugs";
+import {createBug,updateBug,deleteBug} from "./store/bugs";
 
+import  {bugStoreCreator} from  "./store/bugStoreCreator"
+
+
+const store = bugStoreCreator();
 console.log("Hello World!");
 
 const unsubscribe = store.subscribe(

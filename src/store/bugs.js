@@ -62,5 +62,4 @@ export function bugReducers(state =[], action) {
 
 
 //stores
-export const store = createStore(bugReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
