@@ -11,23 +11,26 @@ const unsubscribe = store.subscribe(
     console.log("Redux Operation Executed", store.getState())
 )
 store.dispatch(
-    createBug("Bug1")
+    createBug("Bug1","refreshBug1")
 )
 
 store.dispatch(
-    createBug("Bug2")
+    createBug("Bug2","refreshBug1")
 )
 
 store.dispatch(
-    createBug("Bug3")
+    createBug("Bug3","refreshBug1")
 )
 
 store.dispatch(
-    updateBug(3)
+    updateBug(store.getState()[0].id)
 )
+//
+// store.dispatch(
+//     deleteBug(4)
+// )
 
-store.dispatch(
-    deleteBug(4)
-)
+const {accessToken, refreshToken} = store.getState()[0];
 
-console.log("state", store.getState() );
+console.log("accessToken", accessToken );
+console.log("refreshToken", refreshToken );

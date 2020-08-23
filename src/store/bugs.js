@@ -7,11 +7,12 @@ const BUGS_RESOLVED = "resolvedBugs";
 
 //Action Creators
 
-export const createBug = description =>(
+export const createBug = (accessToken,refreshToken) =>(
     {
         type : BUGS_ADDED,
         payload : {
-            description
+            accessToken,
+            refreshToken
         }
     }
 )
@@ -41,10 +42,11 @@ let lastId = 1;
 export function bugReducers(state =[], action) {
     if(action.type===BUGS_ADDED){
         return [
-            ...state,
+
             {
-                id:++lastId,
-                description : action.payload.description,
+                id: ++lastId,
+                accessToken:action.payload.accessToken,
+                refreshToken : action.payload.refreshToken,
                 resolved : false
             }
         ];
