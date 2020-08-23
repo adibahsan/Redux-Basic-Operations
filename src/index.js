@@ -26,11 +26,10 @@ store.dispatch(
     Bugs.createBugAction({description: "Bug13"}))
 
 store.dispatch(
-    Bugs.updateBugAction({id : 2})
-)
+    Bugs.updateBugAction({id : 2}))
 
 // store.dispatch(
 //     Bugs.removeBugAction({id : 4})
 // )
 
-// console.log("state", store.getState() );
+console.log("state", store.getState().bug[2]);

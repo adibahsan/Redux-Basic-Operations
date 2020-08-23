@@ -1,6 +1,5 @@
-import {createStore} from "redux";
 import {configureStore} from "@reduxjs/toolkit"
-import createReducer from "./projects";
+import createReducer from "./reducers"
 
 
 export function StoreCreator() {
